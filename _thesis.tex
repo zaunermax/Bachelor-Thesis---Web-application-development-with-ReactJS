@@ -1,0 +1,98 @@
+%%% File encoding: UTF-8
+%%% äöüÄÖÜß  <-- keine deutschen Umlaute hier? UTF-faehigen Editor verwenden!
+
+\documentclass[bachelor,english]{hgbthesis}
+% Zulässige Class Options: 
+%   Typ der Arbeit: diplom, master (default), bachelor, praktikum 
+%   Hauptsprache: german (default), english
+%%%----------------------------------------------------------
+
+\RequirePackage[utf8]{inputenc}		% Bei der Verw. von lualatex oder xelatex entfernen!
+
+\graphicspath{{images/}}    % Abbildungsverzeichnis
+\logofile{logo}				% Name des Logo-PDFs in images/ (\logofile{}, wenn kein Logo gewünscht)
+\bibliography{literatur}  	% Name der Biblatex-Literaturdatei (.bib)
+
+\usepackage{parskip}		% Absätze
+\usepackage{subfigure}		% Bilder nebeneinander
+\usepackage{pdfpages}
+
+%%%----------------------------------------------------------
+% Angaben für die Titelei (Titelseite, Erklärung etc.)
+%%%----------------------------------------------------------
+
+%%% Einträge für ALLE Arbeiten: -----------------------------
+\title{Web application development with ReactJS}
+\titlefirstline{Web application development}
+\titlesecondline{with ReactJS}
+\author{Maximilian Zauner}
+\versionsnr{6}
+\studiengang{Software Engineering}
+\studienort{Hagenberg}
+\abgabedatum{2017}{05}{31}	% {YYYY}{MM}{DD}
+
+%%% Zusätzlich für eine Bachelorarbeit: ---------------------
+\nummer{S1310307115}   % Stud-ID, z.B. 1310238045-A  
+% (A = 1. Bachelorarbeit)
+\semester{Winter Semester 2016} 
+\gegenstand{Software Engineering} 
+\betreuer{Dipl. Ing. (FH) Johann Heinzelreiter} % oder \betreuerin{..}
+
+%%% Restriktive Lizenformel anstatt CC (nur für Typ master) -
+%\strictlicense
+
+%%%----------------------------------------------------------
+\begin{document}
+%%%----------------------------------------------------------
+
+%%%----------------------------------------------------------
+\frontmatter                    % Titelei (röm. Seitenzahlen)
+%%%----------------------------------------------------------
+
+%\maketitle
+
+\includepdf[pages=- , offset=75 -75]{front/Titelblatt_Theoretisch.pdf}
+
+%\include{front/vorwort} % Optional. Ggf. weglassen	
+%\include{front/abstract}			
+%\include{front/kurzfassung}	
+
+%%%----------------------------------------------------------
+\mainmatter          % Hauptteil (ab hier arab. Seitenzahlen)
+%%%----------------------------------------------------------
+
+\setcounter{page}{5}
+
+\addcontentsline{toc}{chapter}{Abstract} 
+\include{front/abstract}	
+
+\addcontentsline{toc}{chapter}{Kurzfassung} 
+\include{front/kurzfassung}	
+
+\tableofcontents
+
+\include{chapters/introduction}
+\include{chapters/fluxreduxmvc}
+\include{chapters/reactjs}
+\include{chapters/prototypejulepsearch}
+\include{chapters/conclusion}
+
+%%%----------------------------------------------------------
+\appendix                                            % Anhang 
+%%%----------------------------------------------------------
+
+%\include{back/anhang_a}	% Technische Ergänzungen
+%\include{back/anhang_b}	% Inhalt der CD-ROM/DVD
+%\include{back/anhang_c}	% Chronologische Liste der Änderungen
+%\include{back/anhang_d}	% Quelltext dieses Dokuments
+
+%%%----------------------------------------------------------
+\MakeBibliography                        % Quellenverzeichnis
+%%%----------------------------------------------------------
+
+%%% Messbox zur Druckkontrolle ------------------------------
+%\include{back/messbox}
+
+%%%----------------------------------------------------------
+\end{document}
+%%%----------------------------------------------------------
